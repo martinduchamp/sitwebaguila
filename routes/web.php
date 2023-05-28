@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', EscritorioController::class)->name('escritorio.index');
+Route::get('escritorio', EscritorioController::class)->name('escritorio.index');
 Route::resource('lineas_americanas', LineaAmericanaController::class)->parameters([
     'lineas_americanas' => 'lineaAmericana',
 ]);
