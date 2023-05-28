@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EscritorioController;
+use App\Http\Controllers\LineaAmericanaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', EscritorioController::class)->name('escritorio.index');
+Route::resource('lineas_americanas', LineaAmericanaController::class)->parameters([
+    'lineas_americanas' => 'lineaAmericana',
+]);
