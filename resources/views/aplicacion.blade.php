@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>{{ config('app.name') }}</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/simplex/bootstrap.min.css" integrity="sha512-9BNt00AjhUkiAd7u/l73pzR296z2X5DtAE58kbo8cwJaZaLCOdh8ULfXD3O6B1SHf/5MJw1kJsxL8QQXIbGdKw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/united/bootstrap.min.css" integrity="sha512-OcJVUFAaQ1kaFvQN/nsIoTSTdCyF7aVSpNv5BkqRm9DvMCM+9hndo+Lz8mfZ9Q6tPOn+tSXjZT3g+CSzFeUArA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
         @include('aplicacion.navbar')
