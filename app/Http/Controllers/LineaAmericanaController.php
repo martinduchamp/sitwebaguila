@@ -35,9 +35,6 @@ class LineaAmericanaController extends Controller
         return view('lineas-americanas.edit')->with('lineaAmericana', $lineaAmericana);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, LineaAmericana $lineaAmericana)
     {
         if(! $lineaAmericana->fill( $request->all() )->save() )
@@ -46,9 +43,6 @@ class LineaAmericanaController extends Controller
         return redirect()->route('lineas_americanas.edit', $lineaAmericana)->with('success', 'Se actualizó línea americana correctamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(LineaAmericana $lineaAmericana)
     {
         if(! $lineaAmericana->delete() )
