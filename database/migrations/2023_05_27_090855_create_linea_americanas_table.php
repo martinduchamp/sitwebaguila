@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('linea_americanas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->text('notas');
+            $table->string('nombre')->unique();
+            $table->text('notas')->nullable();
             $table->timestamps();
         });
     }
