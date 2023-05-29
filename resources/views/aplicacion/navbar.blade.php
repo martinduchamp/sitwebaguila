@@ -17,7 +17,7 @@
             <a class="nav-link" href="{{ route('lineas_americanas.index') }}">Líneas americanas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Tipos de remolque</a>
+            <a class="nav-link" href="{{ route('tipos_remolque.index') }}">Tipos de remolque</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>

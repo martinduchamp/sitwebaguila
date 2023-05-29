@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EscritorioController;
 use App\Http\Controllers\LineaAmericanaController;
+use App\Http\Controllers\TipoRemolqueController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('escritorio', EscritorioController::class)->name('escritorio.index');
+
 Route::resource('lineas_americanas', LineaAmericanaController::class)->parameters([
     'lineas_americanas' => 'lineaAmericana',
+]);
+
+Route::resource('tipos_remolque', TipoRemolqueController::class)->parameters([
+    'tipos_remolque' => 'tipoRemolque',
 ]);
