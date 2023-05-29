@@ -22,7 +22,7 @@ class LineaAmericanaController extends Controller
         if(! $lineaAmericana = LineaAmericana::create($request->all()) )
             return back()->with('danger', 'Error al guardar línea americana, intenta nuevamente');
 
-        return redirect()->route('lineas_americanas.index')->with('success', "Línea americana {$lineaAmericana->nombre} guardada");
+        return redirect()->route('lineas_americanas.index')->with('success', "Se guardó línea americana {$lineaAmericana->nombre}");
     }
 
     public function show(LineaAmericana $lineaAmericana)
