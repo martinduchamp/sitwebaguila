@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TipoRemolqueSaveRequest;
 use App\Models\TipoRemolque;
 use Illuminate\Http\Request;
 
@@ -17,9 +18,9 @@ class TipoRemolqueController extends Controller
         return view('tipos-remolque/create')->with('tipoRemolque', new TipoRemolque);
     }
 
-    public function store(Request $request)
+    public function store(TipoRemolqueSaveRequest $request)
     {
-        if(! $tipoRemolque = TipoRemolque::create($request->all() ))
+        if(! $tipoRemolque = TipoRemolque::create($request->validated() ))
             return back()->with('danger', 'Error al guardar tipo de remolque, intenta nuevamente');
 
         return redirect()->route('tipos_remolque.index')->with('success', "Se guardó tipo de remolque {$tipoRemolque->nombre}");
@@ -35,9 +36,9 @@ class TipoRemolqueController extends Controller
         return view('tipos-remolque/edit')->with('tipoRemolque', $tipoRemolque);
     }
 
-    public function update(Request $request, TipoRemolque $tipoRemolque)
+    public function update(TipoRemolqueSaveRequest $request, TipoRemolque $tipoRemolque)
     {
-        if(! $tipoRemolque->fill($request->all())->save() )
+        if(! $tipoRemolque->fill($request->validated())->save() )
             return back()->with('danger', 'Error al actualizar tipo de remolque, intenta nuevamente');
 
         return redirect()->route('tipos_remolque.edit', $tipoRemolque)->with('success', "Se actualizo tipo de remolque correctamente");
