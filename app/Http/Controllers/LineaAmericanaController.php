@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LineaAmericanaSaveRequest;
 use App\Models\LineaAmericana;
 use Illuminate\Http\Request;
 
@@ -17,9 +18,9 @@ class LineaAmericanaController extends Controller
         return view('lineas-americanas.create')->with('lineaAmericana', new LineaAmericana());
     }
 
-    public function store(Request $request)
+    public function store(LineaAmericanaSaveRequest $request)
     {
-        if(! $lineaAmericana = LineaAmericana::create($request->all()) )
+        if(! $lineaAmericana = LineaAmericana::create($request->validated()) )
             return back()->with('danger', 'Error al guardar línea americana, intenta nuevamente');
 
         return redirect()->route('lineas_americanas.index')->with('success', "Se guardó línea americana {$lineaAmericana->nombre}");
@@ -35,9 +36,9 @@ class LineaAmericanaController extends Controller
         return view('lineas-americanas.edit')->with('lineaAmericana', $lineaAmericana);
     }
 
-    public function update(Request $request, LineaAmericana $lineaAmericana)
+    public function update(LineaAmericanaSaveRequest $request, LineaAmericana $lineaAmericana)
     {
-        if(! $lineaAmericana->fill( $request->all() )->save() )
+        if(! $lineaAmericana->fill($request->validated())->save() )
             return back()->with('danger', 'Error al actualizar línea americana, intenta nuevamente');
 
         return redirect()->route('lineas_americanas.edit', $lineaAmericana)->with('success', 'Se actualizó línea americana correctamente');
