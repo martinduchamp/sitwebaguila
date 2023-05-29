@@ -7,7 +7,7 @@
 </div>
 <div class="mb-3">
     <label for="textareaNotas" class="form-label">Notas</label>
-    <textarea class="form-control" id="textareaNotas" rows="3" name="notas">{{ $lineaAmericana->notas }}</textarea>
+    <textarea class="form-control" id="textareaNotas" rows="3" name="notas">{{ old('notas', $lineaAmericana->notas) }}</textarea>
     @error('notas')
     <small class="text-danger">{{ $message }}</small>
     @enderror
