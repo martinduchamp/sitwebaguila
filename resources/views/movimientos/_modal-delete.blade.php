@@ -12,7 +12,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <p class='text-center my-4'>Deseas eliminar movimiento <br><b class="fs-5">{{ $movimiento->id }}</b>?</p>
+            <p class='text-center my-4'>Deseas eliminar movimiento <b>#{{ $movimiento->id }}</b> del <br> <span class="fs-5">Remolque <b>{{ $movimiento->numero_remolque }}</b>?</span></p>
             <form action="{{ route('movimientos.destroy', $movimiento) }}" method="post" id='formDeleteMovimiento'>
                 @csrf
                 @method('delete')

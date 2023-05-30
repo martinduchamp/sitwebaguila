@@ -14,7 +14,7 @@ class MovimientoController extends Controller
 {
     public function index()
     {
-        return view('movimientos/index')->with('movimientos', Movimiento::all());
+        return view('movimientos/index')->with('movimientos', Movimiento::orderByDesc('id')->get());
     }
 
     public function create()
@@ -34,7 +34,7 @@ class MovimientoController extends Controller
 
         Ciclo::guardarMovimiento($movimiento);
 
-        return redirect()->route('movimientos.index')->with('success', "Se guardó movimiento {$movimiento->id}");
+        return redirect()->route('movimientos.index')->with('success', "Se guardó movimiento #{$movimiento->id} del remolque <b>{$movimiento->numero_remolque}</b>");
     }
 
     /**
@@ -70,6 +70,6 @@ class MovimientoController extends Controller
         if(! $movimiento->delete() )
             return back()->with('danger', 'Error al eliminar movimiento, intentar nuevamente');
 
-        return redirect()->route('movimientos.index')->with('success', "Movimiento {$movimiento->id} eliminado");
+        return redirect()->route('movimientos.index')->with('success', "Movimiento #{$movimiento->id} del remolque <b>{$movimiento->numero_remolque}</b> eliminado");
     }
 }
