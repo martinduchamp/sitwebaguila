@@ -1,6 +1,6 @@
 @extends('aplicacion')
 @section('contenido')
-<h1>Editar línea americana</h1>
+<h1>Editar tipo de remolque</h1>
 <br>
 <form action="{{ route('tipos_remolque.update', $tipoRemolque) }}" method="post">
     @include('tipos-remolque._form')
