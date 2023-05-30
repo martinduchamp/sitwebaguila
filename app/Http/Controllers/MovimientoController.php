@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MovimientoSaveRequest;
 use App\Models\CercaDecaGps;
+use App\Models\Ciclo;
 use App\Models\LineaAmericana;
 use App\Models\Movimiento;
 use App\Models\TipoRemolque;
@@ -31,6 +32,8 @@ class MovimientoController extends Controller
         if(! $movimiento = Movimiento::create($request->validated()) )
             return back()->with('danger', 'Error al guardar movimiento, intenta nuevamente');
 
+        Ciclo::guardarMovimiento($movimiento);
+
         return redirect()->route('movimientos.index')->with('success', "Se guardó movimiento {$movimiento->id}");
     }
 
@@ -56,6 +59,8 @@ class MovimientoController extends Controller
     {
         if(! $movimiento->fill($request->validated())->save() )
             return back()->with('danger', 'Error al actualizar movimiento, intenta nuevamente');
+
+        Ciclo::actualizarMovimiento($movimiento);
 
         return redirect()->route('movimientos.edit', $movimiento)->with('success', "Se actualizó movimiento {$movimiento->id}");
     }
