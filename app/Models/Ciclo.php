@@ -23,7 +23,9 @@ class Ciclo extends Model
         'hora',
     ];
 
-    public function scopeGuardarMovimiento(Movimiento $movimiento)
+    public $timestamps = false;
+
+    public static function guardarMovimiento(Movimiento $movimiento)
     {
         return self::create([
             'cerrado' => $movimiento->cerrado_extranjero,
@@ -38,7 +40,7 @@ class Ciclo extends Model
         ]);
     }
 
-    public function scopeActualizarMovimiento(Movimiento $movimiento)
+    public static function actualizarMovimiento($query, Movimiento $movimiento)
     {
         return self::where('id_movimiento', $movimiento->id)->update([
             'cerrado' => $movimiento->cerrado_extranjero,
