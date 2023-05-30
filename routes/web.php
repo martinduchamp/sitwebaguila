@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return redirect('escritorio');
+});
+
 Route::get('escritorio', EscritorioController::class)->name('escritorio.index');
 
 Route::resource('movimientos', MovimientoController::class);
