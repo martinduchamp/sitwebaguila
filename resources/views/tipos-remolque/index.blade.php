@@ -9,7 +9,6 @@
         <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Descripción</th>
                 <th></th>
             </tr>
         </thead>
@@ -17,7 +16,6 @@
             @foreach($tiposRemolque as $tipoRemolque)
             <tr>
                 <td>{{ $tipoRemolque->nombre }}</td>
-                <td>{{ $tipoRemolque->descripcion }}</td>
                 <td class="text-end">
                     <a href="{{ route('tipos_remolque.edit', $tipoRemolque) }}" class="btn btn-warning btn-sm">Editar</a>
                 </td>

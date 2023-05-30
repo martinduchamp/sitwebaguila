@@ -15,6 +15,5 @@ class TipoRemolque extends Model
 
     protected $fillable = [
         'nombre',
-        'descripcion',
     ];
 }

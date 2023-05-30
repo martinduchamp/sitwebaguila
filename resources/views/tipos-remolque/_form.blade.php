@@ -5,11 +5,4 @@
     <small class="text-danger">{{ $message }}</small>
     @enderror
 </div>
-<div class="mb-3">
-    <label for="textareaDescripcion" class="form-label">Descripción</label>
-    <textarea class="form-control" id="textareaDescripcion" rows="3" name="descripcion">{{ old('descripcion', $tipoRemolque->descripcion) }}</textarea>
-    @error('descripcion')
-    <small class="text-danger">{{ $message }}</small>
-    @enderror
-</div>
 @csrf

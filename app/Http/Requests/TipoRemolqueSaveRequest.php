@@ -25,7 +25,6 @@ class TipoRemolqueSaveRequest extends FormRequest
                     $this->tipo_remolque_id
                 ),
             ],
-            'descripcion' => 'nullable',
         ];
     }
 
