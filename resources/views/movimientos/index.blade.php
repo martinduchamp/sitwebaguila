@@ -10,6 +10,7 @@
             <tr>
                 <th></th>
                 <th>Número</th>
+                <th class='text-nowrap'>Fecha y hora</th>
                 <th>Placas</th>
                 <th>Propietario</th>
                 <th>Tipo</th>
@@ -17,9 +18,8 @@
                 <th>Origen</th>
                 <th>Destino</th>
                 <th class='text-nowrap'>Dias en patio</th>
-                <th class='text-nowrap'>Cerrado</th>
-                <th class='text-nowrap'>Cruce</th>
-                <th class='text-nowrap'>Fecha y hora</th>
+                <th class='text-nowrap'>Cruce directa</th>
+                <th class='text-nowrap'>Cerrado en extranjero</th>
             </tr>
         </thead>
         <tbody>
