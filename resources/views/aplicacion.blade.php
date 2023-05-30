@@ -11,6 +11,7 @@
         @include('aplicacion.navbar')
         <br>
         <div class="container">
+            <x-mensajes></x-mensajes>
             @yield('contenido')
         </div>
         <br>
