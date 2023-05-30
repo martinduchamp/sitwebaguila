@@ -18,7 +18,7 @@
                 <th>Origen</th>
                 <th>Destino</th>
                 <th class='text-nowrap'>Dias en patio</th>
-                <th class='text-nowrap'>Cruce directa</th>
+                <th class='text-nowrap'>Cruce directo</th>
                 <th class='text-nowrap'>Cerrado en extranjero</th>
             </tr>
         </thead>
@@ -29,6 +29,9 @@
                     <a href="{{ route('movimientos.edit', $movimiento) }}" class="btn btn-warning btn-sm">Editar</a>
                 </td>
                 <td class='text-nowrap'>{{ $movimiento->numero_remolque }}</td>
+                <td class='text-nowrap'>
+                    {{ $movimiento->fecha }} {{ $movimiento->hora }}
+                </td>
                 <td class='text-nowrap'>{{ $movimiento->placas_remolque }}</td>
                 <td class='text-nowrap'>{{ $movimiento->propietario_remolque }}</td>
                 <td class='text-nowrap'>{{ $movimiento->tipoRemolque->nombre }}</td>
@@ -36,11 +39,8 @@
                 <td></td>
                 <td></td>
                 <td>{{ $movimiento->cantidad_dias_patio }}</td>
-                <td class='text-capitalize'>{{ $movimiento->responde_es_cerrado_extranjero }}</td>
                 <td class='text-capitalize'>{{ $movimiento->responde_es_cruce_directo }}</td>
-                <td class='text-nowrap'>
-                    {{ $movimiento->fecha }} {{ $movimiento->hora }}
-                </td>
+                <td class='text-capitalize'>{{ $movimiento->responde_es_cerrado_extranjero }}</td>
             </tr>
             @endforeach
         </tbody>
