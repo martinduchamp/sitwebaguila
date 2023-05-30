@@ -40,7 +40,7 @@ class Ciclo extends Model
         ]);
     }
 
-    public static function actualizarMovimiento($query, Movimiento $movimiento)
+    public static function actualizarMovimiento(Movimiento $movimiento)
     {
         return self::where('id_movimiento', $movimiento->id)->update([
             'cerrado' => $movimiento->cerrado_extranjero,
