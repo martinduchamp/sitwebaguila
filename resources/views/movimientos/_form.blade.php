@@ -24,7 +24,7 @@
     <select class="form-select" id='selectTipoRemolque' name='tipo_remolque'>
         <option disabled selected label='Selecciona...'></option>
         @foreach($tiposRemolque as $tipoRemolque)
-        <option value="{{ $tipoRemolque->id }}" @selected( old('tipo_remolque', $movimiento->tipoRemolque->id) == $tipoRemolque->id )>{{ $tipoRemolque->nombre }}</option>
+        <option value="{{ $tipoRemolque->id }}" @selected( old('tipo_remolque', ($movimiento->tipoRemolque->id ?? 0)) == $tipoRemolque->id )>{{ $tipoRemolque->nombre }}</option>
         @endforeach
     </select>
     @error('id_tipo_remolque')
@@ -36,7 +36,7 @@
     <select class="form-select" id='selectLineaAmericana' name='linea_americana'>
         <option disabled selected label='Selecciona...'></option>
         @foreach($lineasAmericanas as $lineaAmericana)
-        <option value="{{ $lineaAmericana->id }}" @selected( old('linea_americana', $movimiento->lineaAmericana->id) == $lineaAmericana->id )>{{ $lineaAmericana->nombre }}</option>
+        <option value="{{ $lineaAmericana->id }}" @selected( old('linea_americana', ($movimiento->lineaAmericana->id ?? null)) == $lineaAmericana->id )>{{ $lineaAmericana->nombre }}</option>
         @endforeach
     </select>
     @error('id_linea_americana')
