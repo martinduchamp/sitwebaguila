@@ -14,17 +14,19 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('lineas_americanas.index') }}">Líneas americanas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('tipos_remolque.index') }}">Tipos de remolque</a>
+            <a class="nav-link" href="{{ route('movimientos.index') }}">Movimientos</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <span>Catálogos</span>
+            </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="{{ route('lineas_americanas.index') }}">
+                <span>Líneas americanas</span>
+              </a>
+              <a class="dropdown-item" href="{{ route('tipos_remolque.index') }}">
+                <span>Tipos de remolque</span>
+              </a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Separated link</a>
             </div>
