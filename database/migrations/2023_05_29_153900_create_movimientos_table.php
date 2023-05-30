@@ -16,15 +16,16 @@ return new class extends Migration
             $table->string('numero_remolque', 24);
             $table->string('propietario_remolque', 56);
             $table->string('placas_remolque', 24);
-            $table->unsignedTinyInteger('dias_patio');
-            $table->boolean('directa');
+            $table->unsignedTinyInteger('cantidad_dias_patio');
+            $table->boolean('cruce_directo');
             $table->boolean('cerrado_extranjero');
             $table->text('observaciones')->nullable();
             $table->foreignId('id_tipo_remolque');
             $table->foreignId('id_linea_americana');
             $table->foreignId('id_cerca_decagps_origen');
             $table->foreignId('id_cerca_decagps_destino');
-            $table->datetime('fecha');
+            $table->date('fecha');
+            $table->time('hora');
             $table->timestamps();
         });
     }
