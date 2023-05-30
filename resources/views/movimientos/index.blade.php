@@ -36,11 +36,11 @@
                 <td class='text-nowrap'>{{ $movimiento->propietario_remolque }}</td>
                 <td class='text-nowrap'>{{ $movimiento->tipoRemolque->nombre }}</td>
                 <td class='text-nowrap'>{{ $movimiento->lineaAmericana->nombre }}</td>
-                <td></td>
-                <td></td>
-                <td>{{ $movimiento->cantidad_dias_patio }}</td>
-                <td class='text-capitalize'>{{ $movimiento->responde_es_cruce_directo }}</td>
-                <td class='text-capitalize'>{{ $movimiento->responde_es_cerrado_extranjero }}</td>
+                <td class='text-nowrap'>{{ $movimiento->cercaGpsOrigen->nombre }}</td>
+                <td class='text-nowrap'>{{ $movimiento->cercaGpsDestino->nombre }}</td>
+                <td class='text-center'>{{ $movimiento->cantidad_dias_patio }}</td>
+                <td class='text-center text-capitalize'>{{ $movimiento->responde_es_cruce_directo }}</td>
+                <td class='text-center text-capitalize'>{{ $movimiento->responde_es_cerrado_extranjero }}</td>
             </tr>
             @endforeach
         </tbody>

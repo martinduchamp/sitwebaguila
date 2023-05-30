@@ -14,7 +14,15 @@ class MovimientoController extends Controller
 {
     public function index()
     {
-        return view('movimientos/index')->with('movimientos', Movimiento::orderByDesc('id')->get());
+        return view('movimientos/index')->with(
+            'movimientos', 
+            Movimiento::with([
+                'tipoRemolque', 
+                'LineaAmericana', 
+                'cercaGpsOrigen', 
+                'cercaGpsDestino'
+            ])->orderByDesc('id')->get()
+        );
     }
 
     public function create()
@@ -62,7 +70,7 @@ class MovimientoController extends Controller
 
         Ciclo::actualizarMovimiento($movimiento);
 
-        return redirect()->route('movimientos.edit', $movimiento)->with('success', "Se actualizó movimiento {$movimiento->id}");
+        return redirect()->route('movimientos.edit', $movimiento)->with('success', "Se actualizó movimiento #{$movimiento->id} del remolque <b>{$movimiento->numero_remolque}</b>");
     }
 
     public function destroy(Movimiento $movimiento)

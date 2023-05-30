@@ -38,7 +38,7 @@
     <select class="form-select" id='selectCercaDecaGpsOrigen' name='cerca_decagps_origen' required>
         <option disabled selected label='Selecciona una cerca GPS...'></option>
         @foreach($cercasDecaGps as $cercaDecaGps)
-        <option value="{{ $cercaDecaGps->id }}" @selected( old('cerca_decagps_origen') == $cercaDecaGps->id )>{{ $cercaDecaGps->nombre }}</option>
+        <option value="{{ $cercaDecaGps->id }}" @selected( old('cerca_decagps_origen', $movimiento->id_cerca_decagps_origen) == $cercaDecaGps->id )>{{ $cercaDecaGps->nombre }}</option>
         @endforeach
     </select>
     <x-error buscar='id_cerca_decagps_origen'></x-error>
@@ -48,7 +48,7 @@
     <select class="form-select" id='selectCercaDecaGpsDestino' name='cerca_decagps_destino' required>
         <option disabled selected label='Selecciona una cerca GPS...'></option>
         @foreach($cercasDecaGps as $cercaDecaGps)
-        <option value="{{ $cercaDecaGps->id }}" @selected( old('cerca_decagps_destino') == $cercaDecaGps->id )>{{ $cercaDecaGps->nombre }}</option>
+        <option value="{{ $cercaDecaGps->id }}" @selected( old('cerca_decagps_destino', $movimiento->id_cerca_decagps_destino) == $cercaDecaGps->id )>{{ $cercaDecaGps->nombre }}</option>
         @endforeach
     </select>
     <x-error buscar='id_cerca_decagps_destino'></x-error>

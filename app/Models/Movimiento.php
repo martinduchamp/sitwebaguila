@@ -46,4 +46,14 @@ class Movimiento extends Model
     {
         return $this->belongsTo(LineaAmericana::class, 'id_linea_americana', 'id');
     }
+
+    public function cercaGpsOrigen()
+    {
+        return $this->belongsTo(CercaDecaGps::class, 'id_cerca_decagps_origen', 'id');
+    }
+
+    public function cercaGpsDestino()
+    {
+        return $this->belongsTo(CercaDecaGps::class, 'id_cerca_decagps_destino', 'id');
+    }
 }
