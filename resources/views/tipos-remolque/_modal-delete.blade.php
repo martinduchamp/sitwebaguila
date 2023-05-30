@@ -12,7 +12,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <p class='text-center my-4'>Deseas eliminar el tipo de remolque <br><b class="fs-5">{{ $tipoRemolque->nombre }}</b>?</p>
+            <p class='text-center my-4'>Deseas eliminar el tipo de remolque <br><span class="fs-5"><b>{{ $tipoRemolque->nombre }}</b>?</span></p>
             <form action="{{ route('tipos_remolque.destroy', $tipoRemolque) }}" method="post" id='formDeleteTipoRemolque'>
                 @csrf
                 @method('delete')

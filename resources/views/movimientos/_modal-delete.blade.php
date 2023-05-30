@@ -20,7 +20,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-outline-danger" form="formDeleteMovimiento">Si, eliminar movmiento</button>
+            <button type="submit" class="btn btn-outline-danger" form="formDeleteMovimiento">Si, eliminar movimiento</button>
         </div>
         </div>
     </div>

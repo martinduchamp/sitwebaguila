@@ -12,7 +12,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <p class='text-center my-4'>Deseas eliminar la línea americana <br><b class="fs-5">{{ $lineaAmericana->nombre }}</b>?</p>
+            <p class='text-center my-4'>Deseas eliminar la línea americana <br><span class="fs-5"><b>{{ $lineaAmericana->nombre }}</b>?</span></p>
             <form action="{{ route('lineas_americanas.destroy', $lineaAmericana) }}" method="post" id='formDeleteLineaAmericana'>
                 @csrf
                 @method('delete')
