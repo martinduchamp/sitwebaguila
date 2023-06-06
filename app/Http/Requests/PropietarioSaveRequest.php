@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Models\LineaAmericana;
+use App\Models\Propietario;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PropietarioSaveRequest extends FormRequest

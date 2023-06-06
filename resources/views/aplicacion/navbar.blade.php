@@ -27,10 +27,10 @@
               <a class="dropdown-item" href="{{ route('tipos_remolque.index') }}">
                 <span>Tipos de remolque</span>
               </a>
-            </div>
+
+             </div>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  

@@ -32,3 +32,7 @@ Route::resource('lineas_americanas', LineaAmericanaController::class)->parameter
 Route::resource('tipos_remolque', TipoRemolqueController::class)->parameters([
     'tipos_remolque' => 'tipoRemolque',
 ]);
+
+Route::resource('propietarios', PropietarioController::class)->parameters([
+    'propietarios' => 'propietario',
+]);
