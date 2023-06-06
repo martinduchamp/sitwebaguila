@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('linea_americanas', function (Blueprint $table) {
+        Schema::create('lineas_americanas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre')->unique();
             $table->text('notas')->nullable();
