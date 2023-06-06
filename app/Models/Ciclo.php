@@ -21,6 +21,7 @@ class Ciclo extends Model
         'id_tipo_remolque',
         'fecha',
         'hora',
+        'direccion_letra',
     ];
 
     public $timestamps = false;
@@ -37,6 +38,7 @@ class Ciclo extends Model
             'id_tipo_remolque' => $movimiento->id_tipo_remolque,
             'fecha' => $movimiento->fecha,
             'hora' => $movimiento->hora,
+            'direccion_letra' => "A",
         ]);
     }
 
@@ -51,6 +53,7 @@ class Ciclo extends Model
             'id_tipo_remolque' => $movimiento->id_tipo_remolque,
             'fecha' => $movimiento->fecha,
             'hora' => $movimiento->hora,
+            'direccion_letra' => "A",
         ]);
     }
 }
