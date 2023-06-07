@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 <p class="text-end">
-    <a href="#!" class='link-danger' data-bs-toggle="modal" data-bs-target="#exampleModal">Eliminar tipo de remolque</a>
+    <a href="#!" class='link-danger' data-bs-toggle="modal" data-bs-target="#exampleModal">Eliminar propietario</a>
 </p>
 
 <!-- Modal -->
@@ -12,15 +12,15 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <p class='text-center my-4'>Deseas eliminar el propietario <br><span class="fs-5"><b>{{ $tipoRemolque->nombre }}</b>?</span></p>
-            <form action="{{ route('tipos_remolque.destroy', $tipoRemolque) }}" method="post" id='formDeleteTipoRemolque'>
+            <p class='text-center my-4'>Deseas eliminar el propietario <br><span class="fs-5"><b>{{ $propietario->nombre }}</b>?</span></p>
+            <form action="{{ route('propietarios.destroy', $propietario) }}" method="post" id='formDeletePropietario'>
                 @csrf
                 @method('delete')
             </form>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-outline-danger" form="formDeleteTipoRemolque">Si, eliminar tipo de remolque</button>
+            <button type="submit" class="btn btn-outline-danger" form="formDeletePropietario">Si, eliminar propietario</button>
         </div>
         </div>
     </div>

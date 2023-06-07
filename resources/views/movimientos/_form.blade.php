@@ -9,16 +9,34 @@
     <x-error buscar='placas_remolque'></x-error>
 </div>
 <div class="mb-3">
-    <label for="inputPropietarioRemolque" class="form-label">Propietario del remolque</label>
-    <input type="text" class="form-control" id="inputPropietarioRemolque" name="propietario_remolque" value="{{ old('propietario_remolque', $movimiento->propietario_remolque) }}" required>
-    <x-error buscar='propietario_remolque'></x-error>
+    <label for="selectPropietarioRemolque" class="form-label">Propietario del remolque</label>
+    <select class="form-select" id='selectPropietarioRemolque' name='propietario_remolque' required>
+        <option disabled selected label='Selecciona...'></option>
+
+        @foreach($propietarios as $propietario)
+
+        <?php $is_selected = old('propietario_remolque', $movimiento->id_propietario_remolque) == $propietario->id ?>
+
+        <option data-tipos-remolque="{{ $propietario->tipos_remolque_csv }}" value="{{ $propietario->id }}" @selected( $is_selected )>{{ $propietario->nombre }}</option>
+
+        <?php if( $is_selected ) $propietario_cache = $propietario ?>
+        @endforeach
+
+    </select>
+    <x-error buscar='id_propietario_remolque'></x-error>
 </div>
 <div class="mb-3">
     <label for="selectTipoRemolque" class="form-label">Tipo de remolque</label>
     <select class="form-select" id='selectTipoRemolque' name='tipo_remolque' required>
         <option disabled selected label='Selecciona...'></option>
         @foreach($tiposRemolque as $tipoRemolque)
-        <option value="{{ $tipoRemolque->id }}" @selected( old('tipo_remolque', ($movimiento->tipoRemolque->id ?? 0)) == $tipoRemolque->id )>{{ $tipoRemolque->nombre }}</option>
+        <?php $tipo_remolque_utiliza_propietario = isset($propietario_cache) && in_array($tipoRemolque->id, $propietario_cache->tipos_remolque_array) ?>
+        <option
+            value="{{ $tipoRemolque->id }}"
+            class="{{ $tipo_remolque_utiliza_propietario ? '' : 'd-none' }}"
+            @selected( $tipo_remolque_utiliza_propietario && old('tipo_remolque', $movimiento->id_tipo_remolque) == $tipoRemolque->id )>
+            {{ $tipoRemolque->nombre }}
+        </option>
         @endforeach
     </select>
     <x-error buscar='id_tipo_remolque'></x-error>

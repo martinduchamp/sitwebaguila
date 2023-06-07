@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PropietarioSaveRequest;
 use App\Models\Propietario;
+use App\Models\TipoRemolque;
 use Illuminate\Http\Request;
 
 class PropietarioController extends Controller
@@ -15,12 +16,15 @@ class PropietarioController extends Controller
 
     public function create()
     {
-        return view('propietarios.create')->with('propietario', new Propietario());
+        return view('propietarios.create', [
+            'propietario' => new Propietario,
+            'tipos_remolque' => TipoRemolque::all(),
+        ]);
     }
 
     public function store(PropietarioSaveRequest $request)
     {
-        if (! $propietario = Propietario::create($request->validated())) {
+        if (! $propietario = Propietario::create($request->validated()) ) {
             return back()->with('danger', 'Error al guardar propietario, intenta nuevamente');
         }
 
@@ -34,7 +38,10 @@ class PropietarioController extends Controller
 
     public function edit(Propietario $propietario)
     {
-        return view('propietarios.edit')->with('propietario', $propietario);
+        return view('propietarios.edit', [
+            'propietario' => $propietario,
+            'tipos_remolque' => TipoRemolque::all(),
+        ]);
     }
 
     public function update(PropietarioSaveRequest $request, Propietario $propietario)

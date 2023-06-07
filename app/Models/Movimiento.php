@@ -14,11 +14,11 @@ class Movimiento extends Model
     protected $fillable = [
         'numero_remolque',
         'placas_remolque',
-        'propietario_remolque',
         'cantidad_dias_patio',
         'cerrado_extranjero',
         'cruce_directo',
         'observaciones',
+        'id_propietario_remolque',
         'id_tipo_remolque',
         'id_linea_americana',
         'id_cerca_decagps_origen',
@@ -27,6 +27,7 @@ class Movimiento extends Model
         'hora',
     ];
 
+    // Atributos
     public function getRespondeEsCruceDirectoAttribute()
     {
         return $this->cruce_directo ? 'si' : 'no';
@@ -37,11 +38,19 @@ class Movimiento extends Model
         return $this->cerrado_extranjero ? 'si' : 'no';
     }
 
+
+    // Relaciones
+
+    public function propietario()
+    {
+        return $this->belongsTo(Propietario::class, 'id_propietario_remolque', 'id');
+    }
+
     public function tipoRemolque()
     {
         return $this->belongsTo(TipoRemolque::class, 'id_tipo_remolque', 'id');
     }
-    
+
     public function lineaAmericana()
     {
         return $this->belongsTo(LineaAmericana::class, 'id_linea_americana', 'id');

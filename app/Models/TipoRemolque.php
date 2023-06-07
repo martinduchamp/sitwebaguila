@@ -15,5 +15,6 @@ class TipoRemolque extends Model
 
     protected $fillable = [
         'nombre',
+        'tipos_remolque_formato_csv',
     ];
 }

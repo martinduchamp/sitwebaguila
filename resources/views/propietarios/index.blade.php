@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th>Nombre</th>
+                <th>Tipos de remolque</th>
                 <th></th>
             </tr>
         </thead>
@@ -16,6 +17,7 @@
             @foreach($propietarios as $propietario)
             <tr>
                 <td>{{ $propietario->nombre }}</td>
+                <td>{{ $propietario->contador_tipos_remolque }}</td>
                 <td class="text-end">
                     <a href="{{ route('propietarios.edit', $propietario) }}" class="btn btn-warning btn-sm">Editar</a>
                 </td>

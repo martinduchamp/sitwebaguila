@@ -3,6 +3,7 @@
 use App\Http\Controllers\EscritorioController;
 use App\Http\Controllers\LineaAmericanaController;
 use App\Http\Controllers\MovimientoController;
+use App\Http\Controllers\PropietarioController;
 use App\Http\Controllers\TipoRemolqueController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,4 @@ Route::resource('tipos_remolque', TipoRemolqueController::class)->parameters([
     'tipos_remolque' => 'tipoRemolque',
 ]);
 
-Route::resource('propietarios', PropietarioController::class)->parameters([
-    'propietarios' => 'propietario',
-]);
+Route::resource('propietarios', PropietarioController::class);
