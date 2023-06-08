@@ -7,6 +7,7 @@ use App\Models\CercaDecaGps;
 use App\Models\Ciclo;
 use App\Models\LineaAmericana;
 use App\Models\Movimiento;
+use App\Models\Propietario;
 use App\Models\TipoRemolque;
 use Illuminate\Http\Request;
 
@@ -15,11 +16,12 @@ class MovimientoController extends Controller
     public function index()
     {
         return view('movimientos/index')->with(
-            'movimientos', 
+            'movimientos',
             Movimiento::with([
-                'tipoRemolque', 
-                'LineaAmericana', 
-                'cercaGpsOrigen', 
+                'propietario',
+                'tipoRemolque',
+                'lineaAmericana',
+                'cercaGpsOrigen',
                 'cercaGpsDestino'
             ])->orderByDesc('id')->get()
         );
@@ -29,6 +31,7 @@ class MovimientoController extends Controller
     {
         return view('movimientos/create', [
             'movimiento' => new Movimiento,
+            'propietarios' => Propietario::all(),
             'tiposRemolque' => TipoRemolque::all(),
             'lineasAmericanas' => LineaAmericana::all(),
             'cercasDecaGps' => CercaDecaGps::all(),
@@ -57,6 +60,7 @@ class MovimientoController extends Controller
     {
         return view('movimientos/edit', [
             'movimiento' => $movimiento,
+            'propietarios' => Propietario::all(),
             'tiposRemolque' => TipoRemolque::all(),
             'lineasAmericanas' => LineaAmericana::all(),
             'cercasDecaGps' => CercaDecaGps::all(),

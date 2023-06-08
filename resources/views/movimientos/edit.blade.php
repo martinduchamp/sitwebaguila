@@ -8,6 +8,7 @@
     <button class="btn btn-warning" type="submit">Actualizar movimiento</button>
     <a href="{{ route('movimientos.index') }}" class="btn btn-primary">Regresar</a>
 </form>
+@include('movimientos._script_propietario_remolque')
 <br>
 @include('movimientos/_modal-delete')
 @endsection

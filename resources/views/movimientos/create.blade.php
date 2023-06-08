@@ -7,4 +7,5 @@
     <button class="btn btn-success" type="submit">Guardar movimiento</button>
     <a href="{{ route('movimientos.index') }}" class="btn btn-primary">Cancelar</a>
 </form>
+@include('movimientos._script_propietario_remolque')
 @endsection

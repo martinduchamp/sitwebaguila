@@ -33,7 +33,7 @@
                     {{ $movimiento->fecha }} {{ $movimiento->hora }}
                 </td>
                 <td class='text-nowrap'>{{ $movimiento->placas_remolque }}</td>
-                <td class='text-nowrap'>{{ $movimiento->propietario_remolque }}</td>
+                <td class='text-nowrap'>{{ $movimiento->propietario->nombre }}</td>
                 <td class='text-nowrap'>{{ $movimiento->tipoRemolque->nombre }}</td>
                 <td class='text-nowrap'>{{ $movimiento->lineaAmericana->nombre }}</td>
                 <td class='text-nowrap'>{{ $movimiento->cercaGpsOrigen->nombre }}</td>
