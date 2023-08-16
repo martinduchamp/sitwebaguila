@@ -1,6 +1,6 @@
 @extends('aplicacion')
 @section('contenido')
-<h1>Líneas americanas</h1>
+<h1>Empleados</h1>
 <p class="text-end">
     <a href="{{ route('lineas_americanas.create') }}" class="btn btn-primary">Nueva</a>
 </p>

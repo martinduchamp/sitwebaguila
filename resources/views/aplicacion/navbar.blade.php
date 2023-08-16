@@ -22,7 +22,7 @@
             </a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{{ route('lineas_americanas.index') }}">
-                <span>Líneas americanas</span>
+                <span>Empleados</span>
               </a>
               <a class="dropdown-item" href="{{ route('tipos_remolque.index') }}">
                 <span>Tipos de remolque</span>

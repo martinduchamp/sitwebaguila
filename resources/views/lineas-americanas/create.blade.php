@@ -1,6 +1,6 @@
 @extends('aplicacion')
 @section('contenido')
-<h1>Nueva línea americana</h1>
+<h1>Nuevo Empleado</h1>
 <br>
 <form action="{{ route('lineas_americanas.store') }}" method="post">
     @include('lineas-americanas._form')
